@@ -1,0 +1,24 @@
+public class Solution {
+    public int numRange(int[] A, int B, int C) {
+        if(C == 0){
+            return 0;
+        }
+        return count(A,C) - count(A,B-1);
+    }
+    public int count(int[] A, int k){
+        int i = 0;
+        int j = 0;
+        int sum = 0;
+        int ans = 0;
+        while(j < A.length){
+            sum += A[j];
+            while(sum > k){
+                sum -= A[i];
+                i++;
+            }
+            ans += j-i+1;
+            j++;
+        }
+        return ans;
+    }
+}
