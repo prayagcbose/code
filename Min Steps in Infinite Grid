@@ -1,0 +1,20 @@
+public class Solution {
+    public int coverPoints(int[] A, int[] B) {
+        int x1 = A[0];
+        int y1 = B[0];       
+        int step = 0;        
+        for(int i = 1; i<A.length; i++){
+            int x2 = A[i];
+            int y2 = B[i];           
+            step += steps(x1,y1,x2,y2);          
+            x1 = x2;
+            y1 = y2;
+        }       
+        return step;
+    }    
+    public int steps(int x1, int y1, int x2, int y2){
+        int Xstep = Math.abs(x2-x1);
+        int Ystep = Math.abs(y2-y1);
+        return Math.max(Xstep,Ystep);
+    }
+}
