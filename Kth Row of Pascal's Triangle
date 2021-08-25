@@ -1,0 +1,16 @@
+public class Solution {
+    public int[] getRow(int A) {
+        int[] C = {1};
+        
+        for(int i = 1; i <= A; i++){
+            int[] N = new int[i+1];
+            N[0] = 1;
+            N[i] = 1;
+            for(int j = 1; j < i; j++){
+                N[j] = C[j]+C[j-1];
+            }
+            C = Arrays.copyOf(N,N.length);
+        }
+        return C;
+    }
+}
