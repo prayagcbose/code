@@ -1,0 +1,22 @@
+public class Solution {
+    public String[] fizzBuzz(int A) {
+        // 1 , 2, fizz ,4 ,buzz
+        String[] ret = new String[A];
+        
+        int id = 0;
+        
+        for(int i = 1; i <= A; i++){
+            if(i % 3 == 0 && i % 5 == 0){
+                ret[id++] = "FizzBuzz";
+            }else if(i % 3 == 0){
+                ret[id++] = "Fizz";
+            }else if(i % 5 == 0){
+                ret[id++] = "Buzz";
+            }else{
+                ret[id++] = i + "";
+            }
+        }
+        return ret;
+        
+    }
+}
