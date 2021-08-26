@@ -1,0 +1,31 @@
+public class Solution {
+    public int solve(int A, int[] B) {
+        int sum = 0;
+        for(int num: B){
+            sum += num;
+        }
+        if(sum %3 != 0){
+            return 0;
+        }
+        
+        int pSum = sum / 3;
+        
+        int curSum = 0;
+        int c1 = 0;
+        int cTotal = 0;
+        
+        for(int i = 0; i < A-1; i++){
+            curSum += B[i];
+            if(curSum == 2*pSum){
+                cTotal += c1;
+            }
+            
+            if(curSum == pSum){
+                c1++;
+            }
+        }
+        
+        return cTotal;
+     
+    }
+}
